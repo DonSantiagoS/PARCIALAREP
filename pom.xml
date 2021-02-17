@@ -19,6 +19,12 @@
       <scope>test</scope>
     </dependency>
 	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
         <groupId>com.sparkjava</groupId>
         <artifactId>spark-core</artifactId>
         <version>2.7.2</version>
@@ -33,7 +39,6 @@
 	</plugin>
 	</plugins>
   </reporting>
-	
 	<build>
         <plugins>
 		<plugin>

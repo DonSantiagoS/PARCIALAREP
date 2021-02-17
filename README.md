@@ -2,10 +2,12 @@
 
 Aplicacion para consultar el clima de la ciudad que desee segun el reporte de la API gratuita de https://openweathermap.org/ de **Current Weather Data**
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://parcial1arep.herokuapp.com/clima?lugar=london)
+
 ## Procedimiento para usarlo
 
 
-Una vez realizado esto, debe empaquetar primeramente con el siguiente comando:
+
 
 ```
 mvn package
@@ -88,14 +90,14 @@ usando este codigo como proyeccion de las pruebas que se realizaron:
 
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Git](https://git-scm.com/) - Used to execute, test and compile as console
-
+* [Heroku] (https://heroku.com) - Used to deploy
 
 ## Control de versiones
 
 por: [Santiago Buitrago](https://github.com/DonSantiagoS) 
 
 Version: 1.0
-Fecha: 29 de enero 2021
+Fecha: 17 de febrero 2021
 
 ## Autor
 
