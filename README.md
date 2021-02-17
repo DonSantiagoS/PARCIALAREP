@@ -2,33 +2,131 @@
 
 Aplicacion para consultar el clima de la ciudad que desee segun el reporte de la API gratuita de https://openweathermap.org/ de **Current Weather Data**
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://parcial1arep.herokuapp.com/clima?lugar=london)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://lit-inlet-70387.herokuapp.com/clima?lugar=london)
 
-## Procedimiento para usarlo
+## README
 
-
-
-
-```
-mvn package
-```
-
-Si todo esta en orden debera verse de la siguiente manera
-
-
-![empaquetado](./imagenes/empaquetado.png)
-
-una vez realizado este paso debera ejecutar el siguiente comando para asi poder hacer uso de la aplicacion
+Se creo una apliacion con la cual es posible consulta el clima de la ciudad que desee segun el reporte de la API gratuita de https://openweathermap.org/ de **Current Weather Data** para poder realizar esto el diseño se llevo acabo de la siguiente forma:
+1. Como es de costumbre se genero el proyecto desde Maven
+2. Posteriormente se conecto con el repositorio en git hub
+3. Se configuro el achivo pom de esta forma: 
 
 ```
-java -cp target/App-1.0-SNAPSHOT.jar edu.escuelaing.arep.Lab1.app.App "Ruta archivo a leer"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.escuelaing.arep.parcial.app</groupId>
+  <artifactId>Parcial1</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Parcial1</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
+        <groupId>com.sparkjava</groupId>
+        <artifactId>spark-core</artifactId>
+        <version>2.7.2</version>
+    </dependency>
+  </dependencies>
+  <reporting>
+	<plugins>
+	<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-javadoc-plugin</artifactId>
+	<version>2.10.1</version>
+	</plugin>
+	</plugins>
+  </reporting>
+	<build>
+        <plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>2.10.1</version>
+		</plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.0.2</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>edu.escuelaing.arep.Lab1.app.App</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.7.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <optimize>true</optimize>
+                <debug>true</debug>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.0.2</version>
+            <executions>
+                <execution>
+                    <id>copy-dependencies</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>copy-dependencies</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        </plugins>
+    </build>
+</project>
 ```
 
-en este caso se utilizo el archivo **prueba.txt**
-y se llevo acabo de la siguiente forma:
+4. Posteriormente se realizo el desarrollo de cada una de las clases que se deseaban y requerian para el correcto funcioamiento, resumiendose en los componentes y la Aplicacion principal
+	+ Los componentes se tratan de la conneccion con la API gratuita de https://openweathermap.org/ de **Current Weather Data** lo cual se realizo con dos clases usando como interface HTTP Connection
+	+ Ademas de usar una clase para el cache y asi cumplir con el requerimiento de buscar en las consultas ya realizadas
 
+5. Se realizo el debido despliegue con heroku desde la consola
+Pero primeramente compilando con **Maven**
+![](./resources/compila.png)
+y posteriormente empaquetado con **Maven**
+![](./resources/empaquetado.png)
 
-imagenes de la prueba
+Para posteriormente realizar el despliegue:
+![](./resources/despliegue.png)
+
+Si todo esta en orden debera verse de la siguiente manera:
+
+![](./resources/ejemplo.png)
+
+Algunos ejemplos:
+```
+https://lit-inlet-70387.herokuapp.com/clima?lugar=bogota
+https://lit-inlet-70387.herokuapp.com/clima?lugar=medellin
+https://lit-inlet-70387.herokuapp.com/clima?lugar=paris
+https://lit-inlet-70387.herokuapp.com/clima?lugar=london
+```
+
 
 
 ### Pre requisitos 
@@ -66,13 +164,28 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.261-b12, mixed mode)
 ```
 
 
-## Justuficacion y marco teorico del proyecto
+## Enunciado
 
-Este documento sustenta la justificacion del proyecto, ademas de dar un contexto con enfasis en los conceptos, para los cuales se realizo la aplicacion
+TALLER DE VERIFICACIÓN DE CONOCIMIENTOS TÉCNICOS
+REQUERIMIENTOS
+Su compañía lo ha seleccionado para construir un simple webservice desplegada en Heroku para uno de los clientes más importantes.
 
-[Laboratorio 1](https://github.com/DonSantiagoS/LAB1AREP.git/Laboratorio1.pdf)
+Así, han decidido que usted debe construir un webservice  para consultar el estado del clima en lugares específicos de la tierra.  El servicio web recibirá en un campo la descripción de una ciudad, por ejemplo “London” para Londres   y deberá mostrar la información del clima para esa ciudad. Para esto utilice el API gratuito de https://openweathermap.org/ (Puede crear una cuenta para obtener la llave para realizar consultas). Se le pide que su implementación sea eficiente en cuanto a recursos así que debe implementar un caché que permita evitar hacer consultas repetidas al API externo. La petición debe pasar por su servicio web desplegado en Heroku, es decir desde su servicio en Heroku se debe invocar el servicio web de clima. El usuario no sabrá qué servicio está usted invocando por detrás. Utilice el servicio "Current Weather Data".
 
-por: [Santiago Buitrago](https://github.com/DonSantiagoS)
+Debe usar spark o sockets.
+
+El API de su servicio debe ser el siguiente:
+{url del servicio en heroku}/clima?lugar={ciudad o lugar}
+
+El servicio debe reornar un Json exactamente igual al que retorna el servicio de openweathermap denominado "Current Weather Data". Asegurese que el tipo de retorno sea Json.
+
+Sugerencia realice la implementación de manera incremental. Haga commits regulares.
+
+Entregue todo en GIT HUB y el enlace a Heroku.
+
+JSON
+https://www.w3schools.com/js/js_json_syntax.asp
+
 
 ## Pruebas
 
