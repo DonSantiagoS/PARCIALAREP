@@ -1,5 +1,6 @@
 package edu.escuelaing.arep.parcial.app;
 
+import edu.escuelaing.arep.parcial.componentes.*;
 import java.io.IOException;
 import spark.Request;
 import spark.Response;
@@ -24,19 +25,21 @@ public class App {
     */
     public static void main(String[] args) {
         port(getPort());
-        get("/inputdata", (req, res) -> inputDataPage(req, res));
         get("/clima", (req, res) -> resultsPage(req, res));
     }
 
 	/**
+	*	Resultado de la aplicacion web bajo la solicitud realizada	
+	*
 	*	@param req quien indica la informacion de la solicitud
 	*	@param res quien indica la informacion de respuesta
 	*	@return El clima en la ciudad solicitada en un json 
 	*/
     private static String resultsPage(Request req, Response res) throws IOException {
-		HttpConnection web = new coneccion();
+		cache cacheConsulta= new cache();
 		String solicitud = req.queryParams("lugar");
-		String json = http.getWeatherByCity(solicitud);
+		String json = cache.getClimaCiudad(solicitud);
+		System.out.println(json);
         String pageContent
                 = "<!DOCTYPE html>"
                 + "<html>"
@@ -53,7 +56,6 @@ public class App {
                 + "</head>"
                 +"<title>OpenWeather</title>"
                 + "<body style=\"background-color:rgb(249,255,201);\">"
-                + "<h2 text-aling =\"center\">El Json de la ciudad es </h2>"
                 + "<p>" +json+ "</p>"
                 + "<br>"
                 + "</body>"
