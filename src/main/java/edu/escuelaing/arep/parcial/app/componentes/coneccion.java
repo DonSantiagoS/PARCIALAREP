@@ -27,7 +27,7 @@ import java.net.URL;
 	*	@param lugar quien indica cual es lugar del cual se desea saber el clima
 	*	@throws IOException
 	*/
-	public String getClimaCiudad(String lugar)  throws  IOException {
+	public String getClimaCiudadAPI(String lugar)  throws  IOException {
         
 		String USER_AGENT = "Mozilla/5.0";
         String GET_URL = "http://api.openweathermap.org/data/2.5/weather?q="+lugar+"&appid=6e72a28cc3ae5b0869e48a94997f0fd3";
