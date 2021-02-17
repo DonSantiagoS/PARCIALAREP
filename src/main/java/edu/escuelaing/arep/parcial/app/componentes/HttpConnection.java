@@ -1,4 +1,4 @@
-package edu.escuelaing.arep.parcial.componentes;
+package edu.escuelaing.arep.parcial.app.componentes;
 
 
 import java.io.IOException;
@@ -15,6 +15,6 @@ import java.io.IOException;
 
 public interface HttpConnection {
 
-    public String getWeatherByCity(String city)  throws  IOException;
+    public String getClimaCiudadAPI(String lugar)  throws  IOException;
 
 }

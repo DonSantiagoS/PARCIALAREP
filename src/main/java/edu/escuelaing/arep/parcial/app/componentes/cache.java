@@ -1,4 +1,4 @@
-package edu.escuelaing.arep.parcial.componentes;
+package edu.escuelaing.arep.parcial.app.componentes;
 
 import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
@@ -18,10 +18,10 @@ import java.util.concurrent.ConcurrentHashMap;
  public class cache {
 	
     private ConcurrentHashMap<String, String> lugares;
-	private HttpConnection web;
+	private coneccion web;
 	public cache(){
-		web = new HttpConnectionImpl();
-		lugares = new ConcurrentHashMap<>();
+		lugares=new ConcurrentHashMap<>();
+		web = new coneccion();
 	}
     /**
      * Agrega en el hashmap los climas de los lugares que ya fueron consultados en determinado momento
@@ -41,7 +41,7 @@ import java.util.concurrent.ConcurrentHashMap;
      * @return el clima del lugar solicitado
      * @throws IOException
      */
-    public String getClimaCiudad(String lugar) throws IOException {
+    public  String getClimaCiudad(String lugar) throws IOException {
         if(lugares.containsKey(lugar)) {
             return lugares.get(lugar);
         }else{

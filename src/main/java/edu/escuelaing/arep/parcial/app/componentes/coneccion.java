@@ -1,4 +1,5 @@
-package edu.escuelaing.arep.parcial.componentes;
+package edu.escuelaing.arep.parcial.app.componentes;
+
 
 import java.io.InputStreamReader;
 import java.io.BufferedReader;

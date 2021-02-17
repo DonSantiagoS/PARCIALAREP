@@ -1,6 +1,6 @@
 package edu.escuelaing.arep.parcial.app;
 
-import edu.escuelaing.arep.parcial.componentes.*;
+import edu.escuelaing.arep.parcial.app.componentes.*;
 import java.io.IOException;
 import spark.Request;
 import spark.Response;
@@ -39,7 +39,7 @@ public class App {
     private static String resultsPage(Request req, Response res) throws IOException {
 		cache cacheConsulta= new cache();
 		String solicitud = req.queryParams("lugar");
-		String json = cache.getClimaCiudad(solicitud);
+		String json = cacheConsulta.getClimaCiudad(solicitud);
 		System.out.println(json);
         String pageContent
                 = "<!DOCTYPE html>"
