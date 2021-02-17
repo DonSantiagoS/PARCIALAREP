@@ -5,6 +5,5 @@ Brayan Santiago Buitrago Murillo
 
 Git:
 	https://github.com/DonSantiagoS/PARCIALAREP.git
-Heroku:
 	
 --------------------------------------------------------------------------
