@@ -1,14 +1,9 @@
-# Media y Desviacion Estandar
+# PARCIAL CORTE 1
 
-Aplicacion para calcular la media y la desviacion estandar a un conjunto de datos dados (N numeros reales), los cuales son leidos desde un archivo, los cuales deberan tomarse y darle el respectivo manejo con una implementacion propia de LinkedList que sea compatible con el API de Java
+Aplicacion para consultar el clima de la ciudad que desee segun el reporte de la API gratuita de https://openweathermap.org/ de **Current Weather Data**
 
 ## Procedimiento para usarlo
 
-Para hacer uso de esta aplicacion que calcula la media y desviacion estandar de un cojunto de datos de un archivo, primero debera clonar este reposirorio para que lo pueda tener a nivel local y asi poder ejecutarlo
-
-```
-git clone https://github.com/DonSantiagoS/LAB1AREP.git
-```
 
 Una vez realizado esto, debe empaquetar primeramente con el siguiente comando:
 
