@@ -108,16 +108,20 @@ Se creo una apliacion con la cual es posible consulta el clima de la ciudad que 
 
 5. Se realizo el debido despliegue con heroku desde la consola
 Pero primeramente compilando con **Maven**
-![](./resources/compila.png)
+
+![](./resources/compila.PNG)
+
 y posteriormente empaquetado con **Maven**
-![](./resources/empaquetado.png)
+
+![](./resources/empaquetado.PNG)
 
 Para posteriormente realizar el despliegue:
-![](./resources/despliegue.png)
+
+![](./resources/despliegue.PNG)
 
 Si todo esta en orden debera verse de la siguiente manera:
 
-![](./resources/ejemplo.png)
+![](./resources/ejemplo.PNG)
 
 Algunos ejemplos:
 ```
